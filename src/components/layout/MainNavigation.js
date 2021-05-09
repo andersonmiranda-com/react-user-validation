@@ -15,7 +15,7 @@ const MainNavigation = () => {
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Star Wars Characters</div>
+      <div className={classes.logo}>Star Wars API</div>
       <nav className={classes.nav}>
         <ul>
           {ctx.isLoggedIn && (

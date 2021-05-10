@@ -16,3 +16,7 @@ body {
 .text-danger {
   color: #af0a0a;
 }
+
+.centered {
+  text-align: center;
+}

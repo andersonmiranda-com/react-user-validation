@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+
+import AuthContext from "../../store/auth-context";
 
 import Card from "../UI/Card/Card";
 import Input from "../UI/Input/Input";
@@ -6,11 +8,19 @@ import Button from "../UI/Button/Button";
 import classes from "./EmailForm.module.css";
 
 const EmailForm = (props) => {
+  const ctx = useContext(AuthContext);
+
   const [formData, setFormData] = useState({
     emailInput: "",
     passwordInput: "",
   });
   const [formErrors, setFormErrors] = useState([]);
+
+  useEffect(() => {
+    //cleanup auth status before try new login/signup
+    ctx.onLogout();
+  }, []);
+
   const inputChangeHandler = (event) => {
     setFormData((prevState) => {
       return {
@@ -65,9 +75,13 @@ const EmailForm = (props) => {
           errorMessage="Password must contain at least 6 characters"
         />
 
+        {ctx.errors.length > 0 && (
+          <div className={classes.error}>{ctx.errors}</div>
+        )}
+
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn}>
-            Login
+            {props.action}
           </Button>
         </div>
       </form>

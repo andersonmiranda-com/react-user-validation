@@ -6,7 +6,7 @@ import AuthContext from "./store/auth-context";
 function PrivateRoute(props) {
   const ctx = useContext(AuthContext);
 
-  if (!ctx.isLoggedIn) return <Redirect to="/signin" />;
+  if (!ctx.isLoggedIn) return <Redirect to="/login" />;
   return <Route {...props} />;
 }
 

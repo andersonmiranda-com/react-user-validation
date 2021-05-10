@@ -10,7 +10,7 @@ const MainNavigation = () => {
 
   const onLogoutHandler = () => {
     ctx.onLogout();
-    history.push("/signin");
+    history.push("/login");
   };
 
   return (
@@ -28,8 +28,8 @@ const MainNavigation = () => {
 
           {!ctx.isLoggedIn && (
             <li>
-              <NavLink to="/signin" activeClassName={classes.active}>
-                Sign In
+              <NavLink to="/login" activeClassName={classes.active}>
+                Login
               </NavLink>
             </li>
           )}

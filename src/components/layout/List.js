@@ -47,7 +47,7 @@ const MainPage = () => {
         <>
           <Card className={classes.mainpage}>
             {items.map((item) => (
-              <ListItem item={item} />
+              <ListItem key={item.url} item={item} />
             ))}
           </Card>
 

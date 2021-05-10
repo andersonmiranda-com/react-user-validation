@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 
 import MainPage from "./pages/MainPage";
-import SignIn from "./pages/SignIn";
+import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/layout/Layout";
@@ -19,8 +19,8 @@ const App = () => {
         <PrivateRoute path="/mainpage">
           <MainPage />
         </PrivateRoute>
-        <Route path="/signin">
-          <SignIn />
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/signup">
           <SignUp />

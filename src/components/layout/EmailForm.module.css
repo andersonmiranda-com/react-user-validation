@@ -4,3 +4,11 @@
   margin: 2rem auto;
   padding: 2rem;
 }
+
+.error {
+  flex: 3;
+  color: #881111;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  text-align: right;
+}

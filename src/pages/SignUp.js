@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import AuthContext from "../store/auth-context";
@@ -9,16 +9,23 @@ const SignUp = (props) => {
   const ctx = useContext(AuthContext);
   const history = useHistory();
 
+  useEffect(() => {
+    if (ctx.isLoggedIn && ctx.errors.length === 0) {
+      history.push("/");
+    }
+  }, [ctx]);
+
   const submitHandler = (email, password) => {
-    ctx.onLogin(email, password);
-    console.log("submit");
-    history.push("/");
+    ctx.onSignup(email, password);
   };
 
   return (
     <>
       <h2>Sign Up</h2>
-      <EmailForm onSubmit={submitHandler} />
+      <EmailForm onSubmit={submitHandler} action="Sign Up" />
+      <div className="centered">
+        Already have an account? Please <a href="/login">login</a>.
+      </div>
     </>
   );
 };

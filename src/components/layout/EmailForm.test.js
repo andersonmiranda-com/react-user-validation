@@ -1,11 +1,17 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 
+import { AuthContextProvider } from "../../store/auth-context";
+
 import EmailForm from "./EmailForm";
 
 const setup = () => {
   const submitHandler = jest.fn();
-  const formElement = render(<EmailForm onSubmit={submitHandler} />);
+  const formElement = render(
+    <AuthContextProvider value={{ errors: "" }}>
+      <EmailForm onSubmit={submitHandler} action="Login" />
+    </AuthContextProvider>
+  );
   const emailInput = formElement.getByLabelText("E-mail");
   const passwordInput = formElement.getByLabelText("Password");
   const submitButton = formElement.getByText("Login");

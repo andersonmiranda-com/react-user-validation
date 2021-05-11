@@ -23,12 +23,10 @@ const MainPage = () => {
     return fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setTimeout(() => {
-          setItems(data.results);
-          setNext(data.next);
-          setPrevious(data.previous);
-          setIsLoading(false);
-        }, 500);
+        setItems(data.results);
+        setNext(data.next);
+        setPrevious(data.previous);
+        setIsLoading(false);
       });
   };
 

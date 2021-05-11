@@ -1,6 +1,6 @@
 ## Firebase user auth demo
 
-This is a demonstration of Firebase user autentication, with protect an unprotected routes. It also consumes a REST API and show the contents inside a protected route.
+This is a demonstration of Firebase user authentication, with protect an unprotected routes. It also consumes a REST API and show the contents inside a protected route.
 
 ### Instructions
 

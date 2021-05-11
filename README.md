@@ -1,12 +1,12 @@
 ## Firebase user auth demo
 
-This is as exercise using React Router with protect an unprotected routes. It also consumes a REST API and show the contents inside a protected route.
+This is an exercise using React Router with protect an unprotected routes. It also consumes a REST API and show the contents inside a protected route.
 
 Features:
 
 - User authentication in Firebase with control in Context (isLogged / errors)
 - Router with safe and unsafe routes
-- Navigation bar
+- Navigation bar with content sensible to Context
 - Login and Sign Up forms with field validation
 - Query to an external REST API path (SWAPI) with loading status
 - Unit Tests

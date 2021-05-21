@@ -1,6 +1,6 @@
 ## Firebase user auth demo
 
-This is an exercise using React Router with protect an unprotected routes. It also consumes a REST API and show the contents inside a protected route.
+This is an exercise using React Router with protect and unprotected routes. It also consumes a REST API and show the contents inside a protected route.
 
 Features:
 
